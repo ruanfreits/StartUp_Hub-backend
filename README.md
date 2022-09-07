@@ -4,8 +4,8 @@
 * To run the Applicantio on the directory ./freeApi run the script "node server.js"
 
 Routes:
-*localhost:8081/socio/SignOn --- Criação de Investidor
-*localhost:8081/socio/getAllSocios --- listagem de Investidores
-*localhost:8081/socio/login --- Login de Investidor
-*localhost:8081/company/getAllCompany --- listagem de StartUps
-*localhost:8081/company/createCompany --- Criação de StartUp
+* localhost:8081/socio/SignOn --- Criação de Investidor
+* localhost:8081/socio/getAllSocios --- listagem de Investidores
+* localhost:8081/socio/login --- Login de Investidor
+* localhost:8081/company/getAllCompany --- listagem de StartUps
+* localhost:8081/company/createCompany --- Criação de StartUp
