@@ -26,7 +26,7 @@ router.post('/sentMessage',(req,res)=>{
          message:req.body.menssagem
       }
 
-      s_Email(req.body.remetente,req.body.destinatario,req.body.menssagem)
+      s_Email(correio)
       
       res.status(200).send({
       message:"The email was sent succesfully",

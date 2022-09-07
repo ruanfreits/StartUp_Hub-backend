@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer')
 
 
-async function s_Email(userSend,userReceve,sendContent){
+async function s_Email(data){
 
-    console.log("Usuário que envia",userSend,"\nUsuario que recebe",userReceve,"\nMenssagem enviada",sendContent)
+    console.log("Usuário que envia",data.remetente,"\nUsuario que recebe",data.destinatario,"\nMenssagem enviada",data.message)
 }
 
 

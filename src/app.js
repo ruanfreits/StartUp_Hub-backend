@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 
 const rotaCompany = require('./routes/startup')
 const rotaImoveis = require('./routes/imoveis')
-const rotaUsuarios = require('./utils/usuarios')
+const rotaUsuarios = require('./routes/usuarios')
 const rotaSocio = require('./routes/socio')
 
 

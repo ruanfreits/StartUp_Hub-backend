@@ -1,3 +1,4 @@
+const { SchemaType } = require('../data');
 const momo = require('../data')
 
 const SocioSchema = new momo.Schema({
@@ -12,6 +13,14 @@ const SocioSchema = new momo.Schema({
     },
     password_Socio:{
         type:String,
+        require:true,
+    },
+    nicho_Socio:{
+        type:String,
+        require:true,
+    },
+    valorRisco_Socio:{
+        type:momo.Schema.Types.Decimal128,
         require:true,
     },
     createAd:{
