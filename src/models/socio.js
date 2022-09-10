@@ -15,12 +15,21 @@ const SocioSchema = new momo.Schema({
         type:String,
         require:true,
     },
+    cpf_Socio:{
+        type:String,
+        require:true,
+        unique:true
+    },
     nicho_Socio:{
         type:String,
         require:true,
     },
     valorRisco_Socio:{
         type:momo.Schema.Types.Decimal128,
+        require:true,
+    },
+    user_Type:{
+        type:String,
         require:true,
     },
     createAd:{

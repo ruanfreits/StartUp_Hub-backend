@@ -27,9 +27,6 @@ catch(err){
 }
 })
 
-router.get("/geteste",async (req,res)=>{
-    res.send({"msg":"Hey it is working"},200)
-})
 
 router.get("/getAllSocios", async(req,res)=>{
     try{
@@ -47,11 +44,25 @@ router.get("/getAllSocios", async(req,res)=>{
 router.post("/SignOn",async(req,res)=>{
     console.log("passando aqui")
     try{
-         const {nome_Socio,email_Socio,password_Socio,userType} = req.body
-         const socios = await new Socio({nome_Socio,email_Socio,password_Socio,userType})
-         console.log(socios)
-         await socios.save()
-        const token = jwt.sign({userId:socios.id},authenticate,{expiresIn:86400});
+         const {nome_Socio,
+            email_Socio,
+            password_Socio,
+            cpf_Socio,
+            nicho_Socio,
+            valorRisco_Socio,
+            user_Type,
+            } = req.body
+         const socios = await new Socio({
+            nome_Socio,
+            email_Socio,
+            password_Socio,
+            cpf_Socio,
+            nicho_Socio,
+            valorRisco_Socio,
+            user_Type,
+            })
+        socios.save()
+        const token = jwt.sign({id:socios.id},authenticate.secret,{expiresIn:86400});
     return res.send({"Socio Criado":socios,"auth":true,"token":token},200)
     }
     catch(err){
@@ -61,6 +72,8 @@ router.post("/SignOn",async(req,res)=>{
 } 
 
 })
+
+
 
 
 module.exports = router;
