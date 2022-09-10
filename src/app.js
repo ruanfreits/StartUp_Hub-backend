@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+const cors = require("cors")
 const morgan = require('morgan')
 const bodyParser = require('body-parser') 
 
@@ -12,7 +12,7 @@ const rotaSocio = require('./routes/socio')
 
 //biblioteca para notificação de requisição no prompt
 app.use(morgan('dev'))
-
+app.use(cors)
 //uso de funções do express para o cosumo do body 
 app.use(express.urlencoded({extended:false})) //dados simples
 app.use(express.json())

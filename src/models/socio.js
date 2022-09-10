@@ -14,10 +14,8 @@ const SocioSchema = new momo.Schema({
     password_Socio:{
         type:String,
         require:true,
-    },
-    cpf_Socio:{
+    },cpf_Socio:{
         type:String,
-        require:true,
         unique:true
     },
     nicho_Socio:{
@@ -28,8 +26,8 @@ const SocioSchema = new momo.Schema({
         type:momo.Schema.Types.Decimal128,
         require:true,
     },
-    user_Type:{
-        type:String,
+    userType:{
+        type:momo.Schema.Types.Decimal128,
         require:true,
     },
     createAd:{
