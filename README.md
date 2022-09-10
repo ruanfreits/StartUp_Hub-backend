@@ -9,3 +9,4 @@ Routes:
 * localhost:8081/socio/login --- Login de Investidor
 * localhost:8081/company/getAllCompany --- listagem de StartUps
 * localhost:8081/company/createCompany --- Criação de StartUp
+* localhost:8081/company/:id --- Obtenção de uma unica empresa
