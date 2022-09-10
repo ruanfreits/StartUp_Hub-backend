@@ -23,11 +23,11 @@ const SocioSchema = new momo.Schema({
         require:true,
     },
     valorRisco_Socio:{
-        type:momo.Schema.Types.Decimal128,
+        type:String,
         require:true,
     },
     userType:{
-        type:momo.Schema.Types.Decimal128,
+        type:String,
         require:true,
     },
     createAd:{

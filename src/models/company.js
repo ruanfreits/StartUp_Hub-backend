@@ -11,13 +11,17 @@ const CompanySchema = new momo.Schema({
         unique:true,
     },
     valor_Empresa:{
-        type:momo.Schema.Types.Decimal128,
+        type:String,
         require:true,
     },
     descricao_Empresa:{
         type:String,
         require:false,   
-    }, 
+    },
+    user_Type:{
+        type:String,
+        require:true,
+    },
     createAd:{
         type:Date,
         default:Date.now,
