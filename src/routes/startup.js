@@ -5,10 +5,12 @@ const jwt = require("jsonwebtoken")
 const authenticate = require('../config/auth.json')
 const mongoose = require('mongoose')
 router.get("/getAllCompany", async(req,res)=>{
+    console.log("rodando.....")
     try{
         const companies = await Company.find()
         console.log(companies)
-        return res.send({companies})
+
+        return res.send(companies)
     }
     catch(err){
         return res.status(400).send({error:"Error loading companies"})
