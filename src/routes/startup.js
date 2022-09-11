@@ -9,7 +9,6 @@ router.get("/getAllCompany", async(req,res)=>{
     try{
         const companies = await Company.find()
         console.log(companies)
-
         return res.send(companies)
     }
     catch(err){
@@ -23,11 +22,13 @@ router.post('/createCompany', async (req,res)=>{
         const {nome_Empresa,
             email_Empresa,
             valor_Empresa,
+            descricao_Empresa,
             user_Type} = req.body;
         const companies = await new Company({
             nome_Empresa,
             email_Empresa,
             valor_Empresa,
+            descricao_Empresa,
             user_Type})
 
         companies.save()
@@ -50,7 +51,7 @@ router.get("/:id", async(req,res)=>{
     console.log(companies)
     if(!companies)
         return res.status(400).send({error:'Company not founded'})
-    return res.send({"company":companies})
+    return res.send(companies)
     }
     catch(err){
         return res.send({"msg":"Server Error"},500)
