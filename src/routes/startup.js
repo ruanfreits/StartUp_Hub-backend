@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Company = require("../models/Company")
+const Company = require("../models/company")
 const jwt = require("jsonwebtoken")
 const authenticate = require('../config/auth.json')
 const mongoose = require('mongoose')
