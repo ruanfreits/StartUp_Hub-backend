@@ -5,6 +5,7 @@ const Socio = require("../models/socio")
 const jwt = require('jsonwebtoken')
 const authenticate = require('../config/auth.json')
 
+//rota utilizada futuramente para ser efetuado o login do usuário sócio
 router.post("/login", async(req,res)=>{
 try{
     const {email_Socio,password_Socio} = req.body
@@ -27,7 +28,7 @@ catch(err){
 }
 })
 
-
+//Rota utilizada para obter todos os socios
 router.get("/getAllSocios", async(req,res)=>{
     try{
         const socios = await Socio.find()
@@ -40,7 +41,7 @@ router.get("/getAllSocios", async(req,res)=>{
 })
 
 
-
+//Rota utilizada para fazer login do usuário
 router.post("/SignOn",async(req,res)=>{
     console.log("passando aqui")
     try{
@@ -72,8 +73,6 @@ router.post("/SignOn",async(req,res)=>{
 } 
 
 })
-
-
 
 
 module.exports = router;

@@ -2,10 +2,8 @@ const express = require('express')
 const app = express()
 
 const morgan = require('morgan')
-const bodyParser = require('body-parser') 
 
 const rotaCompany = require('./routes/startup')
-const rotaImoveis = require('./routes/imoveis')
 const rotaUsuarios = require('./routes/usuarios')
 const rotaSocio = require('./routes/socio')
 
@@ -19,7 +17,6 @@ app.use(express.json())
 
 //vinculo de rotas com seus endpoints
 app.use('/company',rotaCompany);
-app.use('/imoveis',rotaImoveis);
 app.use('/user', rotaUsuarios);
 app.use('/socio', rotaSocio);
 

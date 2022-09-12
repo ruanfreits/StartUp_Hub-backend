@@ -4,6 +4,8 @@ const Company = require("../models/company")
 const jwt = require("jsonwebtoken")
 const authenticate = require('../config/auth.json')
 const mongoose = require('mongoose')
+
+//Rota que obtem todas as empresas cadastradas na nossa plataforma
 router.get("/getAllCompany", async(req,res)=>{
     console.log("rodando.....")
     try{
@@ -16,6 +18,7 @@ router.get("/getAllCompany", async(req,res)=>{
     }
 })
 
+//rota utilizada para a criação de empresas
 router.post('/createCompany', async (req,res)=>{
    
     try{
@@ -59,11 +62,6 @@ router.get("/:id", async(req,res)=>{
     //return res.send({"msg":"Error Server "},500) 
     //}
 })
-
-
-
-
-
 
 
 module.exports = router;
