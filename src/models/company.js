@@ -10,6 +10,10 @@ const CompanySchema = new momo.Schema({
         require:true,
         unique:true,
     },
+    password_Empresa:{
+        type:String,
+        require:true,
+    },
     valor_Empresa:{
         type:String,
         require:true,
