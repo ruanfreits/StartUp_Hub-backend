@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const authenticate = require("../config/auth.json");
 const mongoose = require("mongoose");
 
-//Rota para fazer login com conta de empresa
+//Rota para fazer login com conta de empresa /teste
 router.post("/login", async (req, res) => {
   try {
     const {email_Empresa, password_Empresa} = req.body;
@@ -88,8 +88,6 @@ router.get("/:id", async (req, res) => {
   } catch (err) {
     return res.send({msg: "Server Error"}, 500);
   }
-  //return res.send({"msg":"Error Server "},500)
-  //
 });
 
 module.exports = router;
