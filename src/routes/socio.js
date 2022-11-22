@@ -1,7 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
-const Socio = require("../models/Socio");
+const Socio = require("../models/socio");
 const jwt = require("jsonwebtoken");
 const authenticate = require("../config/auth.json");
 
