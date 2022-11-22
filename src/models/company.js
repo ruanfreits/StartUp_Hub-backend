@@ -18,6 +18,10 @@ const CompanySchema = new momo.Schema({
     type: String,
     require: false,
   },
+  password_Empresa: {
+    type: String,
+    require: true,
+  },
   createAd: {
     type: Date,
     default: Date.now,
