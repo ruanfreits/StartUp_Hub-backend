@@ -5,6 +5,31 @@ const jwt = require("jsonwebtoken")
 const authenticate = require('../config/auth.json')
 const mongoose = require('mongoose')
 
+//Rota para fazer login com conta de empresa
+router.post("/login", async(req,res)=>{
+    try{
+        const {email_Empresa,password_Empresa} = req.body
+        const companies = await Company.findOne({email_Empresa}).select("+password_Empresa")
+        //Verificação de existencia de usuário
+        if(!companies)
+            return res.status(400).send({error:'Empresa not founded'})
+        
+        //Verificação de senha
+        if (await password_Empresa != companies.password_Empresa)
+
+            return res.status(400).send({error:'invalid password'})
+        companies.password_Empresa == undefined
+        
+        const token = jwt.sign({userId:companies.id},authenticate.secret,{expiresIn:86400});
+        res.send({"usuário":companies,"auth":true,"token":token})
+    }
+    catch(err){
+        console.error(err,"Erro no servidor")
+        res.send({"Error":err})
+    }
+    })
+
+
 //Rota que obtem todas as empresas cadastradas na nossa plataforma
 router.get("/getAllCompany", async(req,res)=>{
     console.log("rodando.....")
@@ -22,14 +47,17 @@ router.get("/getAllCompany", async(req,res)=>{
 router.post('/createCompany', async (req,res)=>{
    
     try{
-        const {nome_Empresa,
+        const {
+            nome_Empresa,
             email_Empresa,
+            password_Empresa,
             valor_Empresa,
             descricao_Empresa,
             user_Type} = req.body;
         const companies = await new Company({
             nome_Empresa,
             email_Empresa,
+            password_Empresa,
             valor_Empresa,
             descricao_Empresa,
             user_Type})
